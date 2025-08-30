@@ -4,11 +4,12 @@ import { RiGlobalLine } from "react-icons/ri";
 import { topHeader } from ".";
 
 const TopHeader = () => {
-  const words = [
-    "Expert solutions in refineries, road construction, and gas pipelines worldwide.",
-    "From refineries to roads, we deliver quality, precision, and innovation.",
-    'Leading the way in refinery development, gas pipelines, and road construction.'
-  ];
+const words = [
+  "Daveclothingoutdoor – crafted for explorers, built for everyday comfort.",
+  "From city streets to mountain peaks, Daveclothingoutdoor delivers style, durability, and freedom.",
+  "Leading the way in outdoor wear, blending performance, fashion, and adventure."
+];
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);

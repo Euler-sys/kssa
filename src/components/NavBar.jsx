@@ -6,7 +6,7 @@ import { CiHeart } from "react-icons/ci";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import useToggle from "../services/useToggle";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logoo.png";
 
 const NavBar = () => {
   const { open, setOpen } = useToggle();

@@ -14,55 +14,64 @@ const SideBar = () => {
         }`}
       >
         <div className="h-[70px] flex items-center justify-end px-5 text-[40px]">
-          <RiCloseLargeFill className="p-1" onClick={() => setOpen()} />
+          <RiCloseLargeFill className="p-1 cursor-pointer" onClick={() => setOpen()} />
         </div>
         <div className="w-[90%] my-0 mx-auto pb-7">
+          {/* Categories */}
           <ul className="border-b-2 border-black">
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Refinery</span>
+              <span>Men</span>
               <FaAngleRight className="text-[16px]" />
             </li>
-            <li className="font-bold text-xl mb-3">Gas Pipe</li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Road Engineer</span> <FaAngleRight className="text-[16px]" />
+              <span>Women</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Pipelines</span> <FaAngleRight className="text-[16px]" />
+              <span>Outdoor Gear</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Oil Wells</span> <FaAngleRight className="text-[16px]" />
+              <span>Footwear</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Storage Tanks</span> <FaAngleRight className="text-[16px]" />
+              <span>Accessories</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Equipment</span> <FaAngleRight className="text-[16px]" />
+              <span>New Arrivals</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
             <li className="font-bold text-xl mb-3 flex justify-between items-center">
-              <span>Workers</span> <FaAngleRight className="text-[16px]" />
+              <span>Sale</span>
+              <FaAngleRight className="text-[16px]" />
             </li>
           </ul>
+
+          {/* Info Links */}
           <ul className="py-7 border-b-2 border-black">
-            <li className="mb-4 font-serif">Safety & Regulations</li>
-            <li className="mb-4 font-serif">Industry Standards</li>
-            <li className="mb-4 font-serif">About Us</li>
-            <li className="mb-4 font-serif">Support</li>
-            <li className="mb-4 font-serif">Join Now</li>
+            <li className="mb-4 font-serif">About Daveclothingoutdoor</li>
+            <li className="mb-4 font-serif">Sustainability</li>
+            <li className="mb-4 font-serif">Lookbook</li>
+            <li className="mb-4 font-serif">Customer Support</li>
+            <li className="mb-4 font-serif">Join Our Community</li>
           </ul>
+
+          {/* Promo Section */}
           <div className="py-5">
             <p className="font-extrabold text-[1.3em]">
-              DISCOVER all things Energy—AND MORE.
+              DISCOVER style, comfort & adventure with Daveclothingoutdoor.
             </p>
             <p className="font-serif mt-3">
-              One account to access industry insights, latest technologies, and
-              safety guidelines. Stay ahead with exclusive updates and premium
-              resources.
+              One account unlocks exclusive collections, early access to sales,
+              and outdoor lifestyle inspiration. Be part of the movement.
             </p>
             <button className="w-full py-3 bg-[#E9BA2B] font-bold my-5">
               SIGN IN
             </button>
             <a href="#">
-              New to the Industry?{" "}
+              New to Daveclothingoutdoor?{" "}
               <span className="underline">Create Account</span>
             </a>
           </div>
