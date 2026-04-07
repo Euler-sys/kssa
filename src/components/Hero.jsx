@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import heroImg_1 from "../assets/gold-1.jpg";
 import heroImg_2 from "../assets/gold-2.jpg";
 import heroImg_3 from "../assets/gold-3.jpg";
@@ -6,107 +6,102 @@ import heroImg_4 from "../assets/gold-4.jpg";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const images = [heroImg_1, heroImg_2, heroImg_3, heroImg_4];
-const captions = [
-  "Outdoor Lifestyle",
-  "Streetwear in Motion",
-  "Adventure Ready Apparel",
-  "Daveclothingoutdoor Collection"
-];
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [openIndex, setOpenIndex] = useState(null);
+const [openIndex, setOpenIndex] = useState(null);
+  // Auto slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 6000);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+const toggleAccordion = (index) => {
+  setOpenIndex(openIndex === index ? null : index);
+};
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="py-3">
-        <a className="text-[14px] text-[#d3ae3e] font-bold" href="#">
-          Home | Fashion | Daveclothingoutdoor
-        </a>
-      </div>
-
-      {/* Title & Description */}
-      <div className="py-5 text-center">
-        <h1 className="text-[20px] sm:text-3xl font-bold uppercase mb-3 text-[#423615] md:text-4xl">
-          Daveclothingoutdoor
-        </h1>
-        <p className="text-[14px] md:text-[18px] mb-4">
-          Daveclothingoutdoor blends outdoor adventure with urban style. Our
-          collections are designed for comfort, durability, and individuality—
-          empowering you to explore the world in fashion-forward gear.
-        </p>
-      </div>
-      
-      {/* Image Slider */}
-      <div className="relative w-full max-w-lg mx-auto">
+      {/* 🔷 HERO SECTION */}
+      <section className="relative w-full h-[90vh] overflow-hidden">
+        {/* Background Image */}
         <img
-          className="w-full h-[300px] object-cover"
           src={images[currentIndex]}
-          alt="Daveclothingoutdoor Collection"
+          alt="Business Operations"
+          className="absolute w-full h-full object-cover transition-all duration-700"
         />
-        <p className="text-center font-bold py-2 text-gray-700 font-serif">
-          {captions[currentIndex]}
-        </p>
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-3 py-2"
-        >
-          ◀
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-3 py-2"
-        >
-          ▶
-        </button>
-      </div>
 
-      {/* Accordion Section */}
-      <div className="mt-8 max-w-lg mx-auto">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0B1C2C]/70" />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-5">
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight max-w-3xl">
+            Bringing Structure to Your Business Operations
+          </h1>
+
+          <p className="mt-4 text-gray-200 max-w-2xl text-sm md:text-lg">
+            Kathy Structured Solutions helps businesses streamline administrative
+            processes, manage documentation, and coordinate projects efficiently
+            — so you can focus on growth.
+          </p>
+
+          {/* <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <button className="px-6 py-3 bg-[#E9BA2B] font-semibold rounded-lg hover:opacity-90 transition">
+              Get Started
+            </button>
+            <button className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-[#0B1C2C] transition">
+              Learn More
+            </button>
+          </div> */}
+        </div>
+      </section>
+
+      {/* 🔷 SERVICE HIGHLIGHTS (replaces accordion meaningfully) */}
+      <section className="py-12 px-5 max-w-4xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#0B1C2C] mb-8">
+          What We Do
+        </h2>
+
         {[
           {
-            title: "Our Style",
+            title: "Administrative Support",
             content:
-              "We design clothing that connects city life with the great outdoors. From bold streetwear to rugged outdoor essentials, our pieces are made to move with you."
+              "We handle documentation, data organization, and daily administrative tasks to keep your business running smoothly."
           },
           {
-            title: "Our Promise",
+            title: "Project Coordination",
             content:
-              "Every collection is built with premium fabrics and attention to detail, ensuring comfort, durability, and timeless design you can trust."
+              "From planning to execution, we ensure tasks, teams, and timelines stay aligned for successful project delivery."
           },
           {
-            title: "Join the Community",
+            title: "Operations & Workflow Management",
             content:
-              "Be part of the Daveclothingoutdoor family. Sign up for early access to drops, exclusive offers, and style inspiration for your next adventure."
+              "We help structure and optimize your internal processes to improve efficiency and productivity."
           }
         ].map((item, index) => (
           <div key={index} className="border-b border-gray-300">
             <button
-              className="flex justify-between w-full py-3 text-left font-bold"
+              className="flex justify-between items-center w-full py-4 text-left font-semibold text-[#0B1C2C]"
               onClick={() => toggleAccordion(index)}
             >
               {item.title}
               {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </button>
-            {openIndex === index && (
-              <p className="py-2 text-gray-600">{item.content}</p>
-            )}
+
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                openIndex === index ? "max-h-[200px] pb-3" : "max-h-0"
+              }`}
+            >
+              <p className="text-gray-600">{item.content}</p>
+            </div>
           </div>
         ))}
-      </div>
+      </section>
     </>
   );
 };

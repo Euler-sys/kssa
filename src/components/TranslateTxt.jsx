@@ -1,63 +1,85 @@
 import React from "react";
-import ceoImg from "../assets/job.jpg"; // Replace with your brand founder/CEO image
+import ceoImg from "../assets/job.jpg";
 import { MdEmail, MdPhone } from "react-icons/md";
 
 const BrandMarquee = () => {
-  const messages = [
-    { id: 0, title: "PREMIUM OUTDOOR WEAR" },
-    { id: 1, title: "STREET STYLE WITH PURPOSE" },
-    { id: 2, title: "500+ COLLECTIONS LAUNCHED" },
-    { id: 3, title: "GLOBAL COMMUNITY OF TRENDSETTERS" },
+  const highlights = [
+    "Structured Administrative Support",
+    "Efficient Project Coordination",
+    "Reliable Business Operations",
+    "Process Optimization & Workflow Management",
   ];
 
-  const repeatedMessages = [...messages, ...messages];
+  const repeated = [...highlights, ...highlights];
 
   return (
     <>
-      {/* Marquee */}
-      <div className="overflow-hidden whitespace-nowrap my-10 border border-black py-3">
+      {/* 🔷 Marquee (Professional Highlights) */}
+      <div className="overflow-hidden whitespace-nowrap my-10 border-y border-gray-300 py-3 bg-white">
         <ul className="flex animate-marquee">
-          {repeatedMessages.map((msg, index) => (
+          {repeated.map((text, index) => (
             <li
-              className="flex-shrink-0 min-w-fit mx-5 text-gray-950 font-mono"
               key={index}
+              className="mx-6 text-[#0B1C2C] font-medium tracking-wide"
             >
-              {msg.title}
+              {text}
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Brand Mission */}
-      <div className="bg-gray-100 py-7 border-b border-black">
-        <p className="text-center w-fit px-4 md:px-0 md:w-[400px] lg:w-[700px] my-0 mx-auto text-[0.9em] font-mono">
-          At <span className="font-bold">Daveclothingoutdoor</span>, we blend
-          timeless design with durable materials to create clothing that inspires
-          confidence, movement, and lifestyle expression. From streetwear to
-          outdoor essentials, our mission is to keep you stylish anywhere life
-          takes you.
+      {/* 🔷 Mission Statement */}
+      <div className="bg-gray-50 py-10 px-5">
+        <p className="max-w-3xl mx-auto text-center text-gray-700 text-sm md:text-base leading-relaxed">
+          At{" "}
+          <span className="font-semibold text-[#0B1C2C]">
+            Kathy Structured Solutions
+          </span>
+          , we are committed to helping businesses operate with clarity,
+          efficiency, and structure. Our mission is to simplify administrative
+          processes, improve coordination, and create organized systems that
+          support long-term business growth and success.
         </p>
       </div>
 
-      {/* Founder/CEO Card */}
-      <div className="max-w-sm mt-8 mx-auto bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-200 p-6">
-        {/* <img
+      {/* 🔷 Founder / Leadership */}
+      <div className="max-w-sm mt-12 mx-auto bg-white shadow-xl rounded-2xl border p-6 text-center">
+        {/* Image (optional) */}
+        <img
           src={ceoImg}
           alt="Founder"
-          className="w-32 h-32 object-cover rounded-full mx-auto border-4 border-gray-300"
-        /> */}
-        <div className="text-center mt-6">
-          <h2 className="text-xl font-semibold">David Dove 
-</h2>
-          <p className="text-gray-500 text-sm">Founder & Creative Director</p>
-          <div className="mt-3 space-y-2">
-            <p className="flex items-center justify-center text-sm text-gray-700">
-              <MdEmail className="mr-2 text-blue-600" /> Dovedavid332@gmail.com
-            </p>
-            {/* <p className="flex items-center justify-center text-sm text-gray-700">
-              <MdPhone className="mr-2 text-green-600" /> +1 (234) 567-8901
-            </p> */}
-          </div>
+          className="w-28 h-28 object-cover rounded-full mx-auto border-4 border-gray-200"
+        />
+
+        <div className="mt-5">
+          <h2 className="text-lg font-semibold text-[#0B1C2C]">
+            Kathy Ressler
+          </h2>
+          <p className="text-gray-500 text-sm">
+            Founder & Operations Specialist
+          </p>
+
+         <div className="mt-4 space-y-2 text-sm text-gray-600">
+  <p className="flex items-center justify-center">
+    <MdEmail className="mr-2 text-[#E9BA2B]" />
+    <a
+      href="mailto:Kathyressler@outlook.com"
+      className="hover:underline"
+    >
+      Kathyressler@outlook.com
+    </a>
+  </p>
+
+  <p className="flex items-center justify-center">
+    <MdPhone className="mr-2 text-[#E9BA2B]" />
+    <a
+      href="sms:+13053026854"
+      className="hover:underline"
+    >
+      +1 305 302 6854
+    </a>
+  </p>
+</div>
         </div>
       </div>
     </>

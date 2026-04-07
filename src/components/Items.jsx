@@ -1,44 +1,54 @@
 import React from "react";
-import mgg from "../assets/mammoet-refinery-construction-services.jpg"; // replace with your clothing/outdoor image
+import mgg from "../assets/mammoet-refinery-construction-services.jpg";
 
 const Items = () => {
   return (
-    <section className="text-black py-12 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start">
-        {/* Image Section */}
-        <div className="md:w-1/2 mb-6 md:mb-0 md:mr-6">
+    <section className="py-14 px-5 md:px-10 bg-gray-50">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        
+        {/* 🔷 Image */}
+        <div className="md:w-1/2">
           <img
             src={mgg}
-            alt="Daveclothingoutdoor Collection"
-            className="w-full h-auto rounded-lg shadow-lg"
+            alt="Business operations and project coordination"
+            className="w-full h-[350px] md:h-[400px] object-cover rounded-2xl shadow-lg"
           />
         </div>
 
-        {/* Text Section */}
+        {/* 🔷 Content */}
         <div className="md:w-1/2">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-            Redefining outdoor fashion with style and durability
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1C2C] mb-4 leading-snug">
+            We Bring Order, Efficiency, and Structure to Your Business
           </h2>
-          <p className="mb-4">
-            At Daveclothingoutdoor, we believe clothing should do more than just
-            look good—it should move with you, wherever life takes you.
+
+          <p className="text-gray-600 mb-4">
+            At Kathy Structured Solutions, we specialize in helping businesses
+            stay organized, efficient, and focused by managing critical
+            administrative and operational processes.
           </p>
-          <p className="mb-4">
-            Our collections are built to blend streetwear attitude with outdoor
-            resilience, ensuring every piece is both stylish and adventure-ready.
+
+          <p className="text-gray-600 mb-4">
+            From handling documentation and workflows to coordinating projects
+            and teams, we ensure every part of your operation runs smoothly and
+            professionally.
           </p>
-          <p className="mb-4">
-            From breathable fabrics to bold designs, every detail is crafted to
-            bring comfort, confidence, and individuality to your wardrobe.
+
+          <p className="text-gray-600 mb-6">
+            Our goal is simple — to remove the stress of day-to-day operations so
+            you can focus on scaling your business and achieving long-term
+            success.
           </p>
-          <p className="mb-6">
-            Whether you’re exploring the city streets or taking on the great
-            outdoors, Daveclothingoutdoor gives you the freedom to live without
-            limits.
-          </p>
-          <button className="bg-yellow-400 text-black py-2 px-4 rounded-md hover:bg-black hover:text-white transition-colors">
-            Explore Our Collection
-          </button>
+
+          {/* 🔷 CTA */}
+          {/* <div className="flex gap-4 flex-wrap">
+            <button className="bg-[#E9BA2B] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+              Work With Us
+            </button>
+
+            <button className="border border-[#0B1C2C] text-[#0B1C2C] px-6 py-3 rounded-lg font-semibold hover:bg-[#0B1C2C] hover:text-white transition">
+              Learn More
+            </button>
+          </div> */}
         </div>
       </div>
     </section>

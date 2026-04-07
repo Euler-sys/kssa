@@ -20,7 +20,7 @@ const NavBar = () => {
               className=" text-2xl md:hidden"
             />
             <div className="text-center ">
-              <div className=" w-[200px] h-[200px] overflow-hidden my-0 mx-auto">
+              <div className=" w-[100px] h-[100px] overflow-hidden my-0 mx-auto">
                 <img className="w-full object-contain" src={logo} alt="" />
               </div>
               
