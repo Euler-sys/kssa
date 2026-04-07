@@ -59,7 +59,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <CiLocationOn className="mr-2 text-[#0B1C2C]" />
-              <span>Miami, FL, USA</span>
+              <span>San Diego, CA, USA</span>
             </li>
           </ul>
         </div>
